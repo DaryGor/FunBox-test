@@ -1,0 +1,8 @@
+@mixin title {
+  font-family: $title-font-fam;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: $white;
+  text-shadow: 0px 1px 1px #000000;
+}

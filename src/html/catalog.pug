@@ -1,0 +1,28 @@
+section.catalog
+  h2.catalog__title  Ты сегодня покормил кота?
+  img(src="@img/Pattern.png", alt="").catalog__bg
+  .catalog__gradient
+  ul.catalog__list
+    - var cards = [{id: '#1', title: 'с фуа-гра', portions:'10 порций', promo: 'мышь в подарок', img: '@img/Photo.png', kilogram: '0,5', extra: 'Печень утки разварная с артишоками.'}, {id: '#2', title: 'с рыбой', portions:'40 порций', promo: '2 мыши в подарок', img: '@img/Photo.png', kilogram: '2', extra: 'Головы щучьи с чесноком да свежайшая сёмгушка.'}, {id: '#3', title: 'с курой', portions:'100 порций', promo: '5 мышей в подарок заказчик доволен', img: '@img/Photo.png', kilogram: '5', extra: 'Филе из цыплят с трюфелями в бульоне.'}]
+      each card in cards
+        li.catalog__item
+          input(type="checkbox", name="" id=card.id).catalog__input
+          label(for=card.id).card
+            span.card__suptitle
+            h3.card__title Нямушка
+            span.card__subtitle= card.title
+            span.card__description= card.portions
+            span.card__description= card.promo
+            img.card__img(src=card.img, alt="")
+            span.card__lable
+              span.card__lable-number= card.kilogram
+              span.card__lable-text кг
+          .catalog__postscript
+            span.catalog__extra= card.extra
+            span.catalog__disabled= 'Печалька, ' + card.title + ' закончился.'
+            span.catalog__appeal Чего сидишь? Порадуй котэ,&ensp;
+            label(for=card.id).catalog__link купи
+
+
+
+
